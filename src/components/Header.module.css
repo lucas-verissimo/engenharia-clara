@@ -1,0 +1,129 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgb(49 91 107 / 0.16);
+  background: rgb(245 241 232 / 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.inner {
+  display: flex;
+  width: min(calc(100% - 2rem), var(--content-width));
+  min-height: 5rem;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-ink);
+  font-size: 1.02rem;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brand strong {
+  color: var(--color-steel);
+}
+
+.brandMark {
+  display: grid;
+  width: 2.4rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid var(--color-steel);
+  color: var(--color-steel-deep);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transform: rotate(-2deg);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 2vw, 1.8rem);
+}
+
+.navigation a {
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.navigation a:hover {
+  color: var(--color-safety-deep);
+}
+
+.navigation .headerCta {
+  min-height: 2.75rem;
+  padding: 0.62rem 1rem;
+  border: 1px solid var(--color-steel-deep);
+  border-radius: var(--radius-sm);
+  background: var(--color-steel-deep);
+  color: #fff;
+}
+
+.navigation .headerCta:hover {
+  background: var(--color-steel);
+  color: #fff;
+}
+
+.menuButton {
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+  place-items: center;
+}
+
+@media (max-width: 48rem) {
+  .inner {
+    width: min(calc(100% - 1.5rem), var(--content-width));
+    min-height: 4.5rem;
+  }
+
+  .menuButton {
+    display: grid;
+  }
+
+  .navigation {
+    position: absolute;
+    top: calc(100% + 1px);
+    right: 0.75rem;
+    left: 0.75rem;
+    display: none;
+    padding: var(--space-4);
+    border: 1px solid var(--color-line);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .navigationOpen {
+    display: grid;
+    gap: var(--space-1);
+  }
+
+  .navigation a {
+    min-height: 2.75rem;
+    padding: 0.65rem 0.75rem;
+  }
+
+  .navigation .headerCta {
+    margin-top: var(--space-2);
+    text-align: center;
+  }
+}

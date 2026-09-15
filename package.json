@@ -1,0 +1,47 @@
+{
+  "name": "engenharia-clara",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "description": "Projeto demonstrativo autoral de um site institucional responsivo para uma empresa fictícia de engenharia.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "serve out -l 3000",
+    "lint": "eslint src tests *.ts *.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "audit": "lighthouse http://127.0.0.1:3000 --output=html --output-path=./docs/evidence/lighthouse.html --chrome-flags=\"--headless --no-sandbox\""
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.63.0",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@testing-library/user-event": "14.6.7",
+    "@types/node": "26.5.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.1",
+    "@vitest/coverage-v8": "5.0.1",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.5",
+    "jsdom": "29.1.1",
+    "lighthouse": "13.4.1",
+    "serve": "14.2.6",
+    "typescript": "6.0.3",
+    "vite": "8.3.0",
+    "vitest": "5.0.1"
+  }
+}

@@ -1,0 +1,227 @@
+.form {
+  min-width: 0;
+  padding: clamp(1.2rem, 4vw, 2.4rem);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.demoNotice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+  border-left: 3px solid var(--color-safety);
+  background: #fff2e9;
+}
+
+.demoNotice > span {
+  padding: 0.18rem 0.4rem;
+  background: var(--color-safety-deep);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.demoNotice p {
+  margin: 0;
+  color: #66311b;
+  font-size: 0.88rem;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.field {
+  min-width: 0;
+}
+
+.fullField {
+  grid-column: 1 / -1;
+}
+
+.field label,
+.labelRow label {
+  display: block;
+  color: var(--color-ink);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.field label span {
+  color: var(--color-ink-soft);
+  font-weight: 500;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.labelRow > span {
+  color: var(--color-ink-soft);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.labelRow .limitWarning {
+  color: var(--color-danger);
+  font-weight: 800;
+}
+
+.field input,
+.field select,
+.field textarea,
+.summary textarea {
+  width: 100%;
+  margin-top: var(--space-2);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--color-ink);
+}
+
+.field input,
+.field select {
+  min-height: 3.15rem;
+  padding: 0.7rem 0.8rem;
+}
+
+.field textarea,
+.summary textarea {
+  display: block;
+  padding: 0.8rem;
+  resize: vertical;
+}
+
+.field [aria-invalid="true"] {
+  border-color: var(--color-danger);
+  box-shadow: 0 0 0 1px var(--color-danger);
+}
+
+.help,
+.error {
+  margin: var(--space-2) 0 0;
+  font-size: 0.78rem;
+}
+
+.help {
+  color: var(--color-ink-soft);
+}
+
+.error {
+  color: var(--color-danger);
+  font-weight: 700;
+}
+
+.submitButton {
+  display: inline-flex;
+  min-height: 3.2rem;
+  margin-top: var(--space-6);
+  padding: 0.72rem 1.1rem;
+  border: 1px solid var(--color-steel-deep);
+  border-radius: var(--radius-sm);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  background: var(--color-steel-deep);
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.submitButton:hover {
+  background: var(--color-steel);
+  transform: translateY(-1px);
+}
+
+.announcement {
+  min-height: 1.5rem;
+  margin: var(--space-4) 0 0;
+  color: var(--color-success);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.announcement[data-has-errors] {
+  color: var(--color-danger);
+}
+
+.noScript {
+  color: var(--color-danger);
+}
+
+.summary {
+  margin-top: var(--space-5);
+  padding: var(--space-5);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: var(--color-steel-light);
+}
+
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.summaryHeader span {
+  color: var(--color-safety-deep);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.summaryHeader h3 {
+  margin: var(--space-1) 0 0;
+  font-size: 1.05rem;
+}
+
+.summaryHeader button {
+  display: inline-flex;
+  min-height: 2.7rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-steel);
+  border-radius: var(--radius-sm);
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-surface);
+  color: var(--color-steel-deep);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.summary textarea {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 40rem) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .fullField {
+    grid-column: auto;
+  }
+
+  .summaryHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
