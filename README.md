@@ -48,15 +48,23 @@ Copie `.env.example` para `.env.local` somente quando houver URLs reais:
 
 Sem essa configuração, o site evita indexação, não cria canonical público e oculta links inexistentes.
 
-## Implantação
+## Implantação na Vercel
 
-1. Execute `npm ci`, as verificações e `npm run build`.
-2. Publique a pasta `out` como site estático no Cloudflare Pages.
-3. Configure as variáveis públicas no ambiente de build.
-4. Mantenha `trailingSlash: true`: cada rota é materializada como arquivo estático e aceita acesso direto e atualização.
-5. O arquivo `public/_headers` será copiado para `out/_headers` e aplicado pelo Cloudflare Pages.
-6. Faça uma implantação de prévia e valide conteúdo, links, formulário local e responsividade.
-7. Só então habilite a indexação na implantação de produção.
+1. Importe o repositório `lucas-verissimo/engenharia-clara` na Vercel.
+2. Mantenha o framework detectado como Next.js e o comando de build padrão `npm run build`.
+3. Configure as variáveis públicas:
+   - `NEXT_PUBLIC_SITE_URL`: URL definitiva da implantação, sem barra final;
+   - `NEXT_PUBLIC_ALLOW_INDEXING`: `true` somente após validar a URL de produção;
+   - `NEXT_PUBLIC_PORTFOLIO_URL`: `https://lucas-verissimo.github.io/Portifolio/`;
+   - `NEXT_PUBLIC_SOURCE_URL`: `https://github.com/lucas-verissimo/engenharia-clara`.
+4. Faça uma implantação de prévia e valide conteúdo, links, formulário local e responsividade.
+5. Promova a versão revisada para produção. Se a URL mudar, atualize `NEXT_PUBLIC_SITE_URL` e gere uma nova implantação.
+
+O projeto usa exportação estática e não depende de API, banco ou segredos. O arquivo `public/_headers` é específico de hospedagens que o reconheçam; na Vercel, cabeçalhos adicionais podem ser configurados separadamente se necessário.
+
+### Alternativa: Cloudflare Pages
+
+Execute `npm run build` e publique a pasta `out`. O arquivo `public/_headers` será copiado para a exportação e `trailingSlash: true` mantém as rotas estáticas acessíveis por URL direta.
 
 Não há API, segredo, banco, autenticação, analytics ou serviço externo. Veja [a arquitetura](docs/architecture.md), [o estudo de caso](docs/case-study.md), [as declarações de conteúdo](docs/content-disclaimer.md) e [o relatório local de qualidade](docs/evidence/quality-report.md).
 
