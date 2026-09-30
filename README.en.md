@@ -2,6 +2,8 @@
 
 A responsive institutional landing page for a **fictional** engineering consultancy. It demonstrates scope discovery, visual direction, frontend implementation, accessibility, testing, and documentation without claiming nonexistent clients, credentials, or results.
 
+**Live demo:** https://engenharia-clara.vercel.app/
+
 > Engenharia Clara is not a real company. Services, scenarios, and copy are demonstrative. The form neither transmits nor stores data.
 
 ## Highlights

@@ -2,6 +2,8 @@
 
 Landing page institucional responsiva para uma consultoria de engenharia **fictícia**. O projeto demonstra descoberta de escopo, direção visual, implementação frontend, acessibilidade, testes e documentação — sem atribuir clientes, credenciais ou resultados inexistentes.
 
+**Demonstração publicada:** https://engenharia-clara.vercel.app/
+
 > A Engenharia Clara não é uma empresa real. Serviços, cenários e textos são demonstrativos. O formulário não transmite nem armazena dados.
 
 ## O que foi construído
